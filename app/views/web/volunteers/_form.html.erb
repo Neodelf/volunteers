@@ -1,0 +1,42 @@
+<%= form_with(model: volunteer) do |form| %>
+  <% if volunteer.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(volunteer.errors.count, "error") %> prohibited this volunteer from being saved:</h2>
+
+      <ul>
+        <% volunteer.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :first_name, style: "display: block" %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div>
+    <%= form.label :last_name, style: "display: block" %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div>
+    <%= form.label :phone_number, style: "display: block" %>
+    <%= form.text_field :phone_number %>
+  </div>
+
+  <div>
+    <%= form.label :insurance_carrier, style: "display: block" %>
+    <%= form.text_field :insurance_carrier %>
+  </div>
+
+  <div>
+    <%= form.label :medical_record_id, style: "display: block" %>
+    <%= form.text_field :medical_record_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
